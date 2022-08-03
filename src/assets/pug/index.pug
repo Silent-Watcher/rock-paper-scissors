@@ -1,0 +1,40 @@
+doctype html
+html(lang="en").light
+    include includes/_head
+    include includes/_body
+        .container-fluid 
+            .container(hidden) 
+                nav#settings.col-4.offset-4.rounded.d-flex.flex-column.position-relative.p-3
+                    button#setting__close_btn(type='button' aria-label='Close').position-absolute.top-0.end-0.m-2.bg-transparent.border-0.fs-4
+                        i.fa-solid.fa-xmark
+                    h3#settings__title.text-center.p-3.user-select-none settings
+                    form(action="").d-flex.flex-column
+                        h4.text-center.user-select-none Avatar
+                        section#settings__user__gender.d-flex.justify-content-center.align-items-center 
+                            label(for="female_avatar_logo") 
+                                img(src="assets/img/female_avatar.png", alt="").img-fluid
+                            input#female_avatar_logo(type="radio", name="controls" value='female')
+                            label(for="male_avatar_logo") 
+                                img(src="assets/img/male_avatar.png", alt="").img-fluid
+                            input#male_avatar_logo(type="radio", name="controls" value='male')
+                        h4.text-center.user-select-none info
+                        section#settings__user_info.d-flex.justify-content-center.align-items-center.flex-column  
+                            label(for="").fs-5.user-select-none player name 
+                            input(type="text", name="" placeholder = 'enter a cool name!').w-75
+                            label(for="").fs-5.user-select-none player name 
+                            input(type="password", name="" placeholder = 'enter a strong password!').w-75
+                            button(type="submit") save
+                        section#settings__user__info 
+
+            .container 
+                .row
+                    .setting__btn_wrapper 
+                        button#game__setting_button.fs-2.bg-transparent.border-0
+                            i.fa-solid.fa-gear
+                .row 
+                    h1#main__heading.text-center.user-select-none Rock Paper Scissors
+                .row.text-center  
+                    button#play__button.btn.btn-secondary.w-25.fs-3.mt-5.mx-auto.rounded-pill  play !
+                
+    include includes/_scripts
+    //- .text-uppercase.fs-3.w-25.btn.btn-secondary.mx-auto.mt-5.rounded-pill

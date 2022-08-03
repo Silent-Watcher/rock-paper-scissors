@@ -1,0 +1,23 @@
+.dark {
+}
+.light {
+  body {
+    background-color: #f5f5f5;
+  }
+  #main__heading {
+    color: #404040;
+  }
+  #game__setting_button {
+    color: #404040;
+  }
+  #settings {
+    background-color: #555555;
+    color: #f5f5f5;
+    > #setting__close_btn {
+      color: #f5f5f5;
+      &:hover{
+        color: #ccc;
+      }
+    }
+  }
+}

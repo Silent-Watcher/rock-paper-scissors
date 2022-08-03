@@ -1,0 +1,42 @@
+@import 'global/fonts';
+@import 'global/color';
+@import 'global/reset';
+#main__heading {
+  font-size: 8rem;
+}
+#play__button {
+  font-size: 2rem;
+  letter-spacing: 2.8px;
+  box-shadow: 1px 2.9px 16px #6c757d66;
+  transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
+  &:hover {
+    box-shadow: 3px 4.9px 16px #6c757d99;
+    letter-spacing: 5px;
+  }
+}
+#game__setting_button {
+  animation: rotate 5s linear infinite;
+}
+@keyframes rotate {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+#settings{
+  #setting__close_btn{
+    transition: all .5s;
+  }
+  #settings__user__gender{
+    > label {
+      // border: 1px solid ;
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
+  }
+  #settings__user_info{
+    >input{
+      outline: 0;
+    }
+  }
+}
