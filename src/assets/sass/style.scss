@@ -18,15 +18,15 @@
   animation: rotate 5s linear infinite;
 }
 @keyframes rotate {
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
-#settings{
-  #setting__close_btn{
-    transition: all .5s;
+#settings {
+  #setting__close_btn {
+    transition: all 0.5s;
   }
-  #settings__user__gender{
+  #settings__user__gender {
     > label {
       // border: 1px solid ;
       display: block;
@@ -34,9 +34,23 @@
       height: 100px;
     }
   }
-  #settings__user_info{
-    >input{
+  #settings__user_info {
+    > input {
       outline: 0;
     }
+  }
+}
+#moving_scissors {
+  top: 0%;
+  left: 0%;
+  offset-path: path(
+    'M768,52.037c.307,137.744,242.124,232.635,242.124,232.635s165.293-30.61,235.7,21.427,70.4,263.244,70.4,263.244l-110.2,116.317H156.11s-18.366,24.488-27.549,0S-6.122,541.794-6.122,541.794'
+  );
+  offset-distance: 0;
+  animation: move 6s linear 1 forwards;
+}
+@keyframes move {
+  100%{
+    offset-distance: 100%;
   }
 }
