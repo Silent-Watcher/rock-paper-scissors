@@ -86,20 +86,20 @@
           <section class="col-12 mt-5 d-flex justify-content-center align-items-center" id="user_choice_options">
             <ul>
               <li>
-                <button class="choice__icon bg-transparent fs-1" id="rock__icon"> <i class="fa-solid fa-hand-back-fist"></i></button>
+                <button class="choice__icon bg-transparent fs-1" data-value="rock" id="rock__icon"> <i class="fa-solid fa-hand-back-fist"></i></button>
               </li>
               <li>
-                <button class="choice__icon bg-transparent fs-1" id="paper__icon"><i class="fa-solid fa-hand"></i></button>
+                <button class="choice__icon bg-transparent fs-1" data-value="paper" id="paper__icon"><i class="fa-solid fa-hand"></i></button>
               </li>
               <li>
-                <button class="choice__icon bg-transparent fs-1" id="scissors__icon"><i class="fa-solid fa-hand-scissors"></i></button>
+                <button class="choice__icon bg-transparent fs-1" data-value="scissors" id="scissors__icon"><i class="fa-solid fa-hand-scissors"></i></button>
               </li>
             </ul>
             <section class="text-center" id="hands">
               <div class="hand" id="user-hand">
                 <div class="fist"></div>
-                <div class="finger finger-1 scissorsFingers"></div>
-                <div class="finger finger-2 scissorsFingers"></div>
+                <div class="finger finger-1"></div>
+                <div class="finger finger-2"></div>
                 <div class="finger finger-3"></div>
                 <div class="finger finger-4"></div>
                 <div class="thumb"></div>
@@ -121,7 +121,7 @@
     </div>
     <div class="container"> 
       <div class="row"> 
-        <div id="game_sets_page" hidden>
+        <div class="animate__animated" id="game_sets_page" hidden>
           <section class="col-6 p-3 rounded d-flex flex-column fs-4 animate__animated" id="game_sets_window">
             <div id="game_sets_header">
               <button class="goToIntroBtn border-0 bg-transparent"><i class="fa-solid fa-house"></i></button>
@@ -143,5 +143,6 @@
       </div>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
   <script src="assets/js/main.js"> </script>
 </html>

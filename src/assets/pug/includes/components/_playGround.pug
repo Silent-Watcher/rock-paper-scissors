@@ -1,19 +1,19 @@
 section#user_choice_options.col-12.mt-5.d-flex.justify-content-center.align-items-center
     ul
         li
-            button#rock__icon.choice__icon.bg-transparent.fs-1 
+            button(data-value ='rock')#rock__icon.choice__icon.bg-transparent.fs-1 
                 i.fa-solid.fa-hand-back-fist
         li
-            button#paper__icon.choice__icon.bg-transparent.fs-1
+            button(data-value ='paper')#paper__icon.choice__icon.bg-transparent.fs-1
                 i.fa-solid.fa-hand
         li
-            button#scissors__icon.choice__icon.bg-transparent.fs-1
+            button(data-value ='scissors')#scissors__icon.choice__icon.bg-transparent.fs-1
                 i.fa-solid.fa-hand-scissors
     section#hands.text-center
         #user-hand.hand
             .fist
-            .finger.finger-1.scissorsFingers
-            .finger.finger-2.scissorsFingers
+            .finger.finger-1
+            .finger.finger-2
             .finger.finger-3
             .finger.finger-4
             .thumb
