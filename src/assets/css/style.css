@@ -18,7 +18,9 @@
 .light #settings > #setting__close_btn:hover {
   color: #ccc;
 }
-.light #scoreboard h3, .light #scoreboard th, .light #scoreboard td {
+.light #scoreboard h3,
+.light #scoreboard th,
+.light #scoreboard td {
   color: #404040;
 }
 .light #computer__name {
@@ -29,6 +31,17 @@
 }
 .light #user_choice_options button {
   color: #404040;
+}
+.light #game_sets_window {
+  background-color: #555555;
+  color: #f5f5f5;
+  letter-spacing: 1.5px;
+}
+.light #game_sets_window #game_sets_header > button {
+  color: #f5f5f5;
+}
+.light #game_sets_window #game_sets_header > button:hover {
+  color: #ccc;
 }
 
 * {
@@ -216,6 +229,8 @@ div.arm {
   offset-distance: 0;
   -webkit-animation-delay: 500ms;
           animation-delay: 500ms;
+  -webkit-animation: move 7s linear 1 forwards;
+          animation: move 7s linear 1 forwards;
 }
 
 #players #scoreboard {
@@ -262,4 +277,32 @@ div.arm {
 }
 #user_choice_options #scissors__icon {
   transform: rotateY(-180deg);
+}
+
+#game_sets_page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+}
+#game_sets_page #game_sets_window #game_sets_header > button {
+  transition: all 0.5s;
+}
+#game_sets_page #game_sets_window #game_sets_list {
+  list-style: none;
+}
+#game_sets_page #game_sets_window #game_sets_list > li .gameSetsButton {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border-top: 3px solid peru;
+  cursor: pointer;
+  transition: all 1s;
+}
+#game_sets_page #game_sets_window #game_sets_list > li .gameSetsButton:hover {
+  transform: rotate(360deg);
 }/*# sourceMappingURL=style.css.map */

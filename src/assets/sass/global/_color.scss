@@ -16,25 +16,40 @@
     color: #f5f5f5;
     > #setting__close_btn {
       color: #f5f5f5;
-      &:hover{
+      &:hover {
         color: #ccc;
       }
     }
   }
-  #scoreboard{
-    h3,th,td{
+  #scoreboard {
+    h3,
+    th,
+    td {
       color: #404040;
     }
   }
-  #computer__name{
+  #computer__name {
     color: #404040;
   }
-  #player__name{
+  #player__name {
     color: #404040;
   }
-  #user_choice_options{
-    button{
+  #user_choice_options {
+    button {
       color: #404040;
+    }
+  }
+  #game_sets_window {
+    background-color: #555555;
+    color: #f5f5f5;
+    letter-spacing: 1.5px;
+    #game_sets_header {
+      > button {
+        color: #f5f5f5;
+        &:hover{
+          color: #ccc;
+        }
+      }
     }
   }
 }
