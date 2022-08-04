@@ -212,7 +212,7 @@ div.arm {
 
 #settings {
   z-index: 100;
-  left: -500px;
+  left: -100%;
 }
 #settings #setting__close_btn {
   transition: all 0.5s;

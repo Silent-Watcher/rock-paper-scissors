@@ -92,7 +92,7 @@ rockIcon.addEventListener('click', () => {
 // })
 
 startGameBtn.addEventListener('click', () => {
-  introPage.classList.add('animate__backOutDown', 'animate__slow');
+  introPage.classList.add('animate__backOutDown');
   gameSetsPage.firstElementChild.classList.add('animate__fadeInBottomRight');
   gameSetsPage.hidden = false;
   gameSetsPage.style.backgroundColor = '#ffffff60';
@@ -104,7 +104,7 @@ goToIntroBtn.addEventListener('click', () => {
   gamePage.firstElementChild.hidden = true;
   gameSetsPage.hidden = true;
   gameSetsPage.firstElementChild.classList.remove('animate__fadeInBottomRight');
-  introPage.classList.remove('animate__backOutDown', 'animate__slow');
+  introPage.classList.remove('animate__backOutDown');
   introPage.classList.add('animate__backInUp');
 });
 
