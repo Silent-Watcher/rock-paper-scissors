@@ -4,17 +4,7 @@
   body {
     background-color: #f5f5f5;
   }
-  #scoreboard{
-    h3,th,td{
-      color: #404040;
-    }
-  }
-  #computer__name{
-    color: #404040;
-  }
-  #player__name{
-    color: #404040;
-  }
+
   #main__heading {
     color: #404040;
   }
@@ -29,6 +19,22 @@
       &:hover{
         color: #ccc;
       }
+    }
+  }
+  #scoreboard{
+    h3,th,td{
+      color: #404040;
+    }
+  }
+  #computer__name{
+    color: #404040;
+  }
+  #player__name{
+    color: #404040;
+  }
+  #user_choice_options{
+    button{
+      color: #404040;
     }
   }
 }

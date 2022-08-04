@@ -3,6 +3,8 @@
 @import 'global/reset';
 @import 'keyframes/move';
 @import 'keyframes/rotate';
+@import 'keyframes/handShake';
+@import 'components/hands';
 
 #main__heading {
   font-size: 8rem;
@@ -91,5 +93,28 @@
     #computer__name{
 
     }
+  }
+}
+
+#user_choice_options{
+  > ul {
+    list-style: none;
+    >li{
+      margin: 10px;
+      > button {
+        width: 65px;
+        height: 65px;
+        cursor: pointer;
+        border: 2px solid #909090;
+        border-radius: 3px;
+        transition: all .5s ;
+          &:hover{
+              border-color: #404040;
+          }
+      }
+    }
+  }
+  #scissors__icon{
+    transform: rotateY(-180deg);
   }
 }

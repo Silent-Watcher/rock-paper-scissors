@@ -17,26 +17,48 @@ html(lang="en").light
                     button#play__button.btn.btn-secondary.w-25.fs-3.mt-5.mx-auto.rounded-pill  play !
             .container 
                 .row 
-                    section#players.col-12.d-flex.justify-content-around.align-items-center
-                        section#main__player.d-flex.justify-content-around.align-items-center.flex-column
-                            figure#main__player__avatar.player__avatar    
-                                img(src="assets/img/male_avatar.png", alt="").img-fluid
-                            h2#player__name.user-select-none silentWatcher
-                        section#scoreboard 
-                            h3.text-center.fs-1.user-select-none ScoreBoard
-                            table
-                                tbody
-                                    tr
-                                    td#humanScore.text-center.fs-1 0
-                                    td#computerScore.text-center.fs-1 0
-                                tfoot
-                                    tr
-                                    th.text-center.fs-5.user-select-none You
-                                    th.text-center.fs-5.user-select-none Bot
-                        section#computer__player.d-flex.justify-content-around.align-items-center.flex-column
-                            figure#computer__player__avatar.player__avatar    
-                                img(src="assets/img/computer_avatar.png", alt="").img-fluid
-                            h2#computer__name.user-select-none Robot
-                        
+                    include includes/components/_scoreBoard
+                .row 
+                    section#user_choice_options.col-12.mt-5.d-flex.justify-content-center.align-items-center
+                        ul
+                            li
+                                button#rock__icon.bg-transparent.fs-1 
+                                    i.fa-solid.fa-hand-back-fist
+                            li
+                                button#paper__icon.bg-transparent.fs-1
+                                    i.fa-solid.fa-hand
+                            li
+                                button#scissors__icon.bg-transparent.fs-1
+                                    i.fa-solid.fa-hand-scissors
+                        section#hands.text-center
+                            #user-hand.hand
+                                .fist
+                                .finger.finger-1
+                                .finger.finger-2
+                                .finger.finger-3
+                                .finger.finger-4
+                                .thumb
+                                .arm
+                            #computer-hand.hand
+                                .fist
+                                .finger.finger-1
+                                .finger.finger-2
+                                .finger.finger-3
+                                .finger.finger-4
+                                .thumb
+                                .arm
+                            //- #icons
+                            //-     div
+                            //-     label(for='rock-rock') ✊
+                            //-     label(for='paper-rock') ✊
+                            //-     label(for='scissors-rock') ✊
+                            //-     div
+                            //-     label(for='rock-paper') 🖐️
+                            //-     label(for='paper-paper') 🖐️
+                            //-     label(for='scissors-paper') 🖐️
+                            //-     div
+                            //-     label(for='rock-scissors') ✌
+                            //-     label(for='paper-scissors') ✌
+                            //-     label(for='scissors-scissors') ✌
+
     include includes/_scripts
-    //- .text-uppercase.fs-3.w-25.btn.btn-secondary.mx-auto.mt-5.rounded-pill
