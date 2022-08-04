@@ -118,20 +118,18 @@ function startGame(gameSets) {
       userChoice = choiceIcon.dataset.value;
       computerChoice = validActions[~~(Math.random() * 3)];
       counter++;
-
       if (counter > gameSets) {
-        // userScore.innerHTML = userScoreValue;
-        // computerScore.innerHTML = computerScoreValue;
         alert('finished');
         setTimeout(() => {
           if(userScoreValue > computerScoreValue ){
             party.confetti(scoreBoard,{count: party.variation.range(40, 100),});
           }
         }, 500);
-        return;
+        userScore.innerHTML = 0;
+        computerScore.innerHTML = 0;
+        // return;
       } else {
         if (userChoice === computerChoice) {
-          console.log('tied');
         }
         // user win moves
         if (userChoice === 'paper' && computerChoice === 'rock') {
@@ -150,17 +148,14 @@ function startGame(gameSets) {
         if (userChoice === 'paper' && computerChoice === 'scissors') {
           computerScoreValue += 1;
           computerScore.innerHTML = computerScoreValue;
-          console.log('loose');
         }
         if (userChoice === 'rock' && computerChoice === 'paper') {
           computerScoreValue += 1;
           computerScore.innerHTML = computerScoreValue;
-          console.log('loose');
         }
         if (userChoice === 'scissors' && computerChoice === 'rock') {
           computerScoreValue += 1;
           computerScore.innerHTML = computerScoreValue;
-          console.log('loose');
         }
       }
     });
@@ -183,6 +178,7 @@ goToIntroBtn.addEventListener('click', () => {
   introPage.classList.remove('animate__backOutDown');
   introPage.classList.add('animate__backInUp');
 });
+// setting page
 // open settings page
 gotoSettingsBtn.addEventListener('click', () => {
   settingsPage.firstElementChild.style.left = '0';
