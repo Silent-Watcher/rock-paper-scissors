@@ -18,6 +18,12 @@ html(lang="en").light
             .container#game_page.mt-5
                 #game_wrapper(hidden).position-absolute.w-100.h-100.top-0.start-0.animate__animated.mt-5
                     .row 
+                        section#game__widgets.col-12.mt-5.text-center
+                            button(disabled)#refresh_game.bg-transparent.border-0.fs-2.me-1 
+                                i.fa-solid.fa-arrow-rotate-left
+                            button(disabled)#home_widget.border-0.bg-transparent.fs-2.ms-1
+                                i.fa-solid.fa-house
+                    .row 
                         include includes/components/_scoreBoard
                     .row 
                         include includes/components/_playGround

@@ -154,3 +154,14 @@
     }
   }
 }
+#game__widgets{ 
+  >button {
+    // cursor: pointer;
+    transition: .5s ease;
+  }
+  #refresh_game{
+    &:hover{
+      transform: rotate(360deg);
+    }
+  }
+}

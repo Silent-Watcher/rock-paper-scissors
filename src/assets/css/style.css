@@ -310,4 +310,11 @@ div.arm {
 }
 #game_sets_page #game_sets_window #game_sets_list > li .gameSetsButton:hover {
   transform: rotate(360deg);
+}
+
+#game__widgets > button {
+  transition: 0.5s ease;
+}
+#game__widgets #refresh_game:hover {
+  transform: rotate(360deg);
 }/*# sourceMappingURL=style.css.map */

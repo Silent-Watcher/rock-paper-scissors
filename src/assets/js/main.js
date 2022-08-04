@@ -6,6 +6,7 @@ let startGameBtn = $.querySelector('#play__button');
 let gotoSettingsBtn = $.querySelector('#game__setting_button');
 let closeSettingsBtn = $.querySelector('#setting__close_btn');
 let gameSetsBtns = $.querySelectorAll('.gameSetsButton');
+let homeWidgetBtn = $.querySelector('#home_widget')
 // pages
 let introPage = $.querySelector('#intro_page');
 let gamePage = $.querySelector('#game_page');
@@ -171,13 +172,8 @@ startGameBtn.addEventListener('click', () => {
   gamePage.firstElementChild.hidden = false;
 });
 // return to intro page
-goToIntroBtn.addEventListener('click', () => {
-  gamePage.firstElementChild.hidden = true;
-  gameSetsPage.hidden = true;
-  gameSetsPage.firstElementChild.classList.remove('animate__fadeInBottomRight');
-  introPage.classList.remove('animate__backOutDown');
-  introPage.classList.add('animate__backInUp');
-});
+homeWidgetBtn.addEventListener('click',ReturnToIntroPage);
+goToIntroBtn.addEventListener('click',ReturnToIntroPage);
 // setting page
 // open settings page
 gotoSettingsBtn.addEventListener('click', () => {
@@ -190,3 +186,11 @@ closeSettingsBtn.addEventListener('click', () => {
   settingsPage.firstElementChild.classList.add('animate__bounceOutLeft');
   settingsPage.firstElementChild.classList.remove('animate__bounceInLeft');
 });
+
+function ReturnToIntroPage(){
+  gamePage.firstElementChild.hidden = true;
+  gameSetsPage.hidden = true;
+  gameSetsPage.firstElementChild.classList.remove('animate__fadeInBottomRight');
+  introPage.classList.remove('animate__backOutDown');
+  introPage.classList.add('animate__backInUp');
+}
