@@ -210,6 +210,10 @@ div.arm {
           animation: rotate 5s linear infinite;
 }
 
+#settings {
+  z-index: 100;
+  left: -500px;
+}
 #settings #setting__close_btn {
   transition: all 0.5s;
 }

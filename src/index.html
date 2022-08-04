@@ -16,8 +16,8 @@
   </head>
   <body class="position-relative vw-100 vh-100 d-flex justify-content-center align-items-center overflow-hidden"></body>
   <div class="container-fluid"><i class="fa-solid fa-scissors position-absolute fs-1" id="moving_scissors"></i>
-    <div class="container" hidden> 
-      <nav class="col-4 offset-4 rounded d-flex flex-column position-relative p-3" id="settings">
+    <div class="container" id="settings_page">
+      <nav class="col-4 rounded d-flex flex-column position-absolute p-3 top-0 animate__animated" id="settings">
         <button class="position-absolute top-0 end-0 m-2 bg-transparent border-0 fs-4" id="setting__close_btn" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
         <h3 class="text-center p-3 user-select-none" id="settings__title">settings</h3>
         <form class="d-flex flex-column" action="">
@@ -125,7 +125,7 @@
           <section class="col-6 p-3 rounded d-flex flex-column fs-4 animate__animated" id="game_sets_window">
             <div id="game_sets_header">
               <button class="goToIntroBtn border-0 bg-transparent"><i class="fa-solid fa-house"></i></button>
-              <p class="text-center" id="game_sets_title">How many sets do you want to play ? 🤔</p>
+              <p class="text-center user-select-none" id="game_sets_title">How many sets do you want to play ? 🤔</p>
             </div>
             <ul class="d-flex justify-content-around align-items-center" id="game_sets_list">
               <li>

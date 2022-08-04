@@ -24,6 +24,8 @@
 }
 
 #settings {
+  z-index: 100;
+  left: -500px;
   #setting__close_btn {
     transition: all 0.5s;
   }

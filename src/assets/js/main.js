@@ -1,11 +1,15 @@
 'use strict';
 let $ = document;
+// buttons
 let goToIntroBtn = $.querySelector('.goToIntroBtn');
 let startGameBtn = $.querySelector('#play__button');
+let gotoSettingsBtn = $.querySelector('#game__setting_button');
+let closeSettingsBtn = $.querySelector('#setting__close_btn');
 // pages
 let introPage = $.querySelector('#intro_page');
 let gamePage = $.querySelector('#game_page');
 let gameSetsPage = $.querySelector('#game_sets_page');
+let settingsPage = $.querySelector('#settings_page');
 // animated moving scissors
 let movingScissors = $.querySelector('#moving_scissors');
 // hands
@@ -102,4 +106,15 @@ goToIntroBtn.addEventListener('click', () => {
   gameSetsPage.firstElementChild.classList.remove('animate__fadeInBottomRight');
   introPage.classList.remove('animate__backOutDown', 'animate__slow');
   introPage.classList.add('animate__backInUp');
+});
+
+gotoSettingsBtn.addEventListener('click', () => {
+  settingsPage.firstElementChild.style.left = '0';
+  settingsPage.firstElementChild.classList.add('animate__bounceInLeft');
+  settingsPage.firstElementChild.classList.remove('animate__bounceOutLeft');
+});
+
+closeSettingsBtn.addEventListener('click', () => {
+  settingsPage.firstElementChild.classList.add('animate__bounceOutLeft');
+  settingsPage.firstElementChild.classList.remove('animate__bounceInLeft');
 });
