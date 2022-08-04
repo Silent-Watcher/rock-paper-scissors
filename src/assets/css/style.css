@@ -2,6 +2,15 @@
 .light body {
   background-color: #f5f5f5;
 }
+.light #scoreboard h3, .light #scoreboard th, .light #scoreboard td {
+  color: #404040;
+}
+.light #computer__name {
+  color: #404040;
+}
+.light #player__name {
+  color: #404040;
+}
 .light #main__heading {
   color: #404040;
 }
@@ -23,6 +32,27 @@
   font-family: "Mouse Memoirs", sans-serif;
 }
 
+@-webkit-keyframes move {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes move {
+  100% {
+    offset-distance: 100%;
+  }
+}
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 #main__heading {
   font-size: 8rem;
 }
@@ -43,17 +73,6 @@
           animation: rotate 5s linear infinite;
 }
 
-@-webkit-keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
 #settings #setting__close_btn {
   transition: all 0.5s;
 }
@@ -73,18 +92,30 @@
   offset-distance: 0;
   -webkit-animation-delay: 500ms;
           animation-delay: 500ms;
-  -webkit-animation: move 7s linear 1 forwards;
-          animation: move 7s linear 1 forwards;
 }
 
-@-webkit-keyframes move {
-  100% {
-    offset-distance: 100%;
-  }
+#players #scoreboard {
+  border-radius: 5px;
+  width: 50%;
+  border: 3px solid #606060;
 }
-
-@keyframes move {
-  100% {
-    offset-distance: 100%;
-  }
+#players #scoreboard > h3 {
+  padding: 10px;
+  border-bottom: 3px solid #606060;
+}
+#players #scoreboard > table {
+  margin: 10px auto;
+  width: 100%;
+  border-collapse: collapse;
+}
+#players .player__avatar > img {
+  width: 200px;
+  height: 200px;
+}
+#players #computer__player #computer__player__avatar {
+  padding-top: 2.5rem;
+}
+#players #computer__player #computer__player__avatar > img {
+  width: 150px;
+  height: 150px;
 }/*# sourceMappingURL=style.css.map */

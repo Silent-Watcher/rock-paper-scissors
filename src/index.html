@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
-  <body class="overflow-hidden vw-100 vh-100 d-flex justify-content-center align-items-center"> 
+  <body class="vw-100 vh-100 d-flex justify-content-center align-items-center"> 
     <div class="container-fluid"><i class="fa-solid fa-scissors position-absolute fs-1" id="moving_scissors"></i>
       <div class="container" hidden> 
         <nav class="col-4 offset-4 rounded d-flex flex-column position-relative p-3" id="settings">
@@ -50,6 +50,35 @@
         </div>
         <div class="row text-center"> 
           <button class="btn btn-secondary w-25 fs-3 mt-5 mx-auto rounded-pill" id="play__button"> play !</button>
+        </div>
+      </div>
+      <div class="container"> 
+        <div class="row"> 
+          <section class="col-12 d-flex justify-content-around align-items-center" id="players">
+            <section class="d-flex justify-content-around align-items-center flex-column" id="main__player">
+              <figure class="player__avatar" id="main__player__avatar">   <img class="img-fluid" src="assets/img/male_avatar.png" alt=""></figure>
+              <h2 class="user-select-none" id="player__name">silentWatcher</h2>
+            </section>
+            <section id="scoreboard"> 
+              <h3 class="text-center fs-1 user-select-none">ScoreBoard</h3>
+              <table>
+                <tbody>
+                  <tr></tr>
+                  <td class="text-center fs-1" id="humanScore">0</td>
+                  <td class="text-center fs-1" id="computerScore">0</td>
+                </tbody>
+                <tfoot>
+                  <tr></tr>
+                  <th class="text-center fs-5 user-select-none">You</th>
+                  <th class="text-center fs-5 user-select-none">Bot</th>
+                </tfoot>
+              </table>
+            </section>
+            <section class="d-flex justify-content-around align-items-center flex-column" id="computer__player">
+              <figure class="player__avatar" id="computer__player__avatar">   <img class="img-fluid" src="assets/img/computer_avatar.png" alt=""></figure>
+              <h2 class="user-select-none" id="computer__name">Robot</h2>
+            </section>
+          </section>
         </div>
       </div>
     </div>

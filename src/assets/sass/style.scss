@@ -1,6 +1,9 @@
 @import 'global/fonts';
 @import 'global/color';
 @import 'global/reset';
+@import 'keyframes/move';
+@import 'keyframes/rotate';
+
 #main__heading {
   font-size: 8rem;
 }
@@ -17,18 +20,13 @@
 #game__setting_button {
   animation: rotate 5s linear infinite;
 }
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 #settings {
   #setting__close_btn {
     transition: all 0.5s;
   }
   #settings__user__gender {
     > label {
-      // border: 1px solid ;
       display: block;
       width: 100px;
       height: 100px;
@@ -48,10 +46,50 @@
   );
   offset-distance: 0;
   animation-delay: 500ms;
-  animation: move 7s linear 1 forwards;
+  // animation: move 7s linear 1 forwards;
 }
-@keyframes move {
-  100%{
-    offset-distance: 100%;
+// 
+#players{
+  #scoreboard{
+    // width: 14em;
+    border-radius: 5px;
+    // flex-grow: 1;
+    width: 50%;
+    border: 3px solid #606060;
+    > h3 {
+      padding: 10px;
+      border-bottom: 3px solid #606060;  
+    }
+    >table{
+      margin: 10px auto;
+      width: 100%;
+      border-collapse: collapse;
+    }
+  }
+  .player__avatar {
+    > img{
+      width: 200px;
+      height: 200px;
+    }
+  }
+  #main__player{
+    #main__player__avatar{
+
+    }
+    #player__name{
+
+    }
+  }
+  #computer__player{
+    #computer__player__avatar{
+      padding-top: 2.5rem;
+      >img{
+        width: 150px;
+        height: 150px;
+      }
+    }
+    #computer__name{
+
+    }
   }
 }
