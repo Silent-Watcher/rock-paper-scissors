@@ -1,66 +1,108 @@
 .hand {
-    margin: 20px;
-    width: 200px;
-    height: 200px;
-    position: relative;
-    transform: rotate(10deg);
-    display: inline-block;
-    animation: handShake 2s infinite;
-  }
-  
-  .hand > div {
-    position: absolute;
-    box-sizing: border-box;
-    border: 2px solid black;
-    background: #808080;
-    transition: all 0.1s;
-  }
-  
-  .fist {
-    height: 110px;
-    left: 40px;
-    top: 50px;
-    width: 90px;
-    border-radius: 20px 0 0 20px;
-  }
-  
-  .finger {
-    width: 70px;
-    height: 30px;
-    border-radius: 20px;
-    left: 80px;
-    transform-origin: 0 50%;
-  }
-  
-  .finger-1 { top: 50px; --dif: 0px; }
-  .finger-2 { top: 78px; left: 84px; --dif: 4px; }
-  .finger-3 { top: 106px; --dif: 0px; }
-  .finger-4 { top: 134px; height: 26px; left: 76px; --dif: -8px; }
-  
-  div.thumb {
-    width: 35px;
-    height: 70px;
-    
-    border-radius: 0 20px 20px 20px;
-    top: 50px;
-    left: 80px;
-    border-left: 0 solid;
-    box-shadow: -17px 6px 0 -15px black;
-  }
-  
-  div.arm {
-    width: 22px;
-    height: 70px;
-    left: 20px;
-    top: 70px;
-    border: 0;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-  }
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform: rotate(10deg);
+  display: inline-block;
+  animation: handShake 2s infinite;
+}
 
-  #computer-hand {
-    transform: rotateY(180deg);
-    animation: handShake2 2s infinite;
-    position: relative;
+.hand > div {
+  position: absolute;
+  box-sizing: border-box;
+  border: 2px solid black;
+  background: #808080;
+  transition: all 0.1s;
+}
+
+.fist {
+  height: 110px;
+  left: 40px;
+  top: 50px;
+  width: 90px;
+  border-radius: 20px 0 0 20px;
+}
+
+.finger {
+  width: 70px;
+  height: 30px;
+  border-radius: 20px;
+  left: 80px;
+  transform-origin: 0 50%;
+}
+
+.finger-1 {
+  top: 50px;
+  --dif: 0px;
+}
+.finger-2 {
+  top: 78px;
+  left: 84px;
+  --dif: 4px;
+}
+.finger-3 {
+  top: 106px;
+  --dif: 0px;
+}
+.finger-4 {
+  top: 134px;
+  height: 26px;
+  left: 76px;
+  --dif: -8px;
+}
+
+div.thumb {
+  width: 35px;
+  height: 70px;
+
+  border-radius: 0 20px 20px 20px;
+  top: 50px;
+  left: 80px;
+  border-left: 0 solid;
+  box-shadow: -17px 6px 0 -15px black;
+}
+
+div.arm {
+  width: 22px;
+  height: 70px;
+  left: 20px;
+  top: 70px;
+  border: 0;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#computer-hand {
+  transform: rotateY(180deg);
+  animation: handShake2 2s infinite;
+  position: relative;
+}
+
+.paper__Hand {
+   >div[class*='finger'] {
+    left: 124px!important;
+    left: calc(124px + var(--dif))!important;
+    width: 80px!important;
+    border-left: 0!important;
+    border-radius: 0 20px 20px 0!important;
   }
-  
+  animation: none!important;
+}
+.scissorsHand {
+  &-computer,
+  &-user {
+    animation: none!important;
+    .finger-1 {
+      width: 130px!important;
+      transform: rotate(-5deg)!important;
+    }
+    .finger-2 {
+      width: 130px!important;
+      transform: rotate(5deg)!important;
+    }
+  }
+}
+.fistHand{
+  animation: none!important;
+}

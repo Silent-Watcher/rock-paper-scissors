@@ -50,6 +50,7 @@
 
 body {
   overflow-x: hidden;
+  font-size: 2rem;
 }
 
 @-webkit-keyframes move {
@@ -190,6 +191,36 @@ div.arm {
   position: relative;
 }
 
+.paper__Hand {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+.paper__Hand > div[class*=finger] {
+  left: 124px !important;
+  left: calc(124px + var(--dif)) !important;
+  width: 80px !important;
+  border-left: 0 !important;
+  border-radius: 0 20px 20px 0 !important;
+}
+
+.scissorsHand-computer, .scissorsHand-user {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+.scissorsHand-computer .finger-1, .scissorsHand-user .finger-1 {
+  width: 130px !important;
+  transform: rotate(-5deg) !important;
+}
+.scissorsHand-computer .finger-2, .scissorsHand-user .finger-2 {
+  width: 130px !important;
+  transform: rotate(5deg) !important;
+}
+
+.fistHand {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+
 #main__heading {
   font-size: 8rem;
 }
@@ -317,4 +348,9 @@ div.arm {
 }
 #game__widgets #refresh_game:hover {
   transform: rotate(360deg);
+}
+
+.swal2-title {
+  font-size: 1.6rem !important;
+  letter-spacing: 1.5px;
 }/*# sourceMappingURL=style.css.map */
