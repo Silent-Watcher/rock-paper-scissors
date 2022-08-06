@@ -6,7 +6,8 @@ let startGameBtn = $.querySelector('#play__button');
 let gotoSettingsBtn = $.querySelector('#game__setting_button');
 let closeSettingsBtn = $.querySelector('#setting__close_btn');
 let gameSetsBtns = $.querySelectorAll('.gameSetsButton');
-let homeWidgetBtn = $.querySelector('#home_widget')
+let homeWidgetBtn = $.querySelector('#home_widget');
+let refreshGame = homeWidgetBtn.previousElementSibling;
 // pages
 let introPage = $.querySelector('#intro_page');
 let gamePage = $.querySelector('#game_page');
@@ -39,27 +40,11 @@ let computerScoreValue = +computerScore.dataset.score;
 // avatars
 let userAvatar = $.querySelector('#main__player__avatar');
 let computerAvatar = $.querySelector('#computer__player__avatar');
-// 
+//
 let scoreBoard = $.querySelector('#scoreboard');
 // gameSets which user defines it
-// let gameSets;
-// change the hand shape to scissors
-// function makeScissors(indexFinger, middleFinger, isUser = true) {
-//   indexFinger.style.width = '130px';
-//   indexFinger.style.transform = 'rotate(-5deg)';
-//   middleFinger.style.width = '130px';
-// }
-// change the hand shape to paper
-// ToDo : user library
-// function makePaper(paperFingers) {
-//   paperFingers.map((paperFinger) => {
-//     paperFinger.style.left = '124px';
-//     paperFinger.style.left = 'calc(124px + var(--dif))';
-//     paperFinger.style.width = '80px';
-//     paperFinger.style.borderLeft = '0';
-//     paperFinger.style.borderRadius = '0 20px 20px 0';
-//   });
-// }
+let gameSets = 0;
+
 // remove animated scissors from dom when animation ends
 movingScissors.addEventListener('animationend', (event) => {
   event.target.hidden = true;
@@ -69,111 +54,67 @@ movingScissors.addEventListener('animationend', (event) => {
 gameSetsBtns.forEach((gameSetsBtn) => {
   gameSetsBtn.addEventListener('click', function () {
     gameSetsPage.classList.add('animate__fadeOutBottomRight');
-    // gameSets = +this.innerHTML;
-    startGame(+this.innerHTML);
+    gamePage.firstElementChild.style.filter = 'blur(0)';
+    gameSets = +this.innerHTML;
+    // startGame(gameSets);
   });
 });
 //
-//---------------------- CHANGE THE SHAPE OF THE USER HAND -----------------------
-// make scissors with user hand
-// scissorsIcon.addEventListener('click', () => {
-//   userChoice = 'scissors';
-//   let userIndexFinger = userHand.firstElementChild.nextElementSibling;
-//   let userMiddleFinger = userIndexFinger.nextElementSibling;
-//   makeScissors(userIndexFinger, userMiddleFinger);
-//   userIndexFinger.parentElement.style.animation = 'none';
-// });
-//
-// make paper with user hand
-// paperIcon.addEventListener('click', () => {
-//   userChoice = 'paper';
-//   let userPaperFingers = Array.from(userHandFingers).filter((finger) => {
-//     return finger.classList.contains('finger');
-//   });
-//   makePaper(userPaperFingers);
-//   userHand.style.animation = 'none';
-// });
-//
-// make rock with user hand
-// rockIcon.addEventListener('click', () => {
-//   userChoice = 'rock';
-//   userHand.style.animation = 'none';
-// });
-//---------------------------------------------------------------------------------
-// choiceIcons.forEach(choiceIcon=>{
-//   choiceIcon.addEventListener('click',)
-// })
-
-// let f = 5;
-// document.addEventListener('click', function () {
-//   f--;
-//   if (f == 0) {
-//     alert('ss');
-//   }
-// });
-
-function startGame(gameSets) {
-  let counter = 0;
-  choiceIcons.forEach((choiceIcon) => {
-    choiceIcon.addEventListener('click', function (param) {
-      userChoice = choiceIcon.dataset.value;
-      computerChoice = validActions[~~(Math.random() * 3)];
-      counter++;
-      if (counter > gameSets) {
-        alert('finished');
-        setTimeout(() => {
-          if(userScoreValue > computerScoreValue ){
-            party.confetti(scoreBoard,{count: party.variation.range(40, 100),});
-          }
-        }, 500);
-        userScore.innerHTML = 0;
-        computerScore.innerHTML = 0;
-        // return;
-      } else {
-        if (userChoice === computerChoice) {
-        }
-        // user win moves
-        if (userChoice === 'paper' && computerChoice === 'rock') {
-          userScoreValue += 1;
-          userScore.innerHTML = userScoreValue;
-        }
-        if (userChoice === 'rock' && computerChoice === 'scissors') {
-          userScoreValue += 1;
-          userScore.innerHTML = userScoreValue;
-        }
-        if (userChoice === 'scissors' && computerChoice === 'paper') {
-          userScoreValue += 1;
-          userScore.innerHTML = userScoreValue;
-        }
-        // computer win moves
-        if (userChoice === 'paper' && computerChoice === 'scissors') {
-          computerScoreValue += 1;
-          computerScore.innerHTML = computerScoreValue;
-        }
-        if (userChoice === 'rock' && computerChoice === 'paper') {
-          computerScoreValue += 1;
-          computerScore.innerHTML = computerScoreValue;
-        }
-        if (userChoice === 'scissors' && computerChoice === 'rock') {
-          computerScoreValue += 1;
-          computerScore.innerHTML = computerScoreValue;
-        }
-      }
-    });
-  });
+function startGame(gameSets, userChoice) {
+  computerChoice = validActions[~~(Math.random() * 3)];
+  if (gameSets === 0) {
+    homeWidgetBtn.disabled = false;
+    refreshGame.disabled = false;
+    if (userScoreValue > computerScoreValue) {
+      party.confetti(scoreBoard, {
+        count: party.variation.range(40, 100),
+      });
+    }
+  }
+  if (userChoice === computerChoice) {
+  }
+  // user win moves
+  if (userChoice === 'paper' && computerChoice === 'rock') {
+    userScoreValue += 1;
+    userScore.innerHTML = userScoreValue;
+  }
+  if (userChoice === 'rock' && computerChoice === 'scissors') {
+    userScoreValue += 1;
+    userScore.innerHTML = userScoreValue;
+  }
+  if (userChoice === 'scissors' && computerChoice === 'paper') {
+    userScoreValue += 1;
+    userScore.innerHTML = userScoreValue;
+  }
+  // computer win moves
+  if (userChoice === 'paper' && computerChoice === 'scissors') {
+    computerScoreValue += 1;
+    computerScore.innerHTML = computerScoreValue;
+  }
+  if (userChoice === 'rock' && computerChoice === 'paper') {
+    computerScoreValue += 1;
+    computerScore.innerHTML = computerScoreValue;
+  }
+  if (userChoice === 'scissors' && computerChoice === 'rock') {
+    computerScoreValue += 1;
+    computerScore.innerHTML = computerScoreValue;
+  }
 }
 
 // start intro page transitions
 startGameBtn.addEventListener('click', () => {
   introPage.classList.add('animate__backOutDown');
-  gameSetsPage.firstElementChild.classList.add('animate__fadeInBottomRight');
   gameSetsPage.hidden = false;
-  gameSetsPage.style.backgroundColor = '#ffffff60';
+  gameSetsPage.classList.remove('animate__fadeOutBottomRight');
+  gameSetsPage.classList.add('animate__fadeInBottomRight');
+  // gameSetsPage.style.background = 'transparent';
+  gamePage.firstElementChild.style.filter = 'blur(3px)';
+  // gamePage.style.filter = 'blur(3px)';
   gamePage.firstElementChild.hidden = false;
 });
 // return to intro page
-homeWidgetBtn.addEventListener('click',ReturnToIntroPage);
-goToIntroBtn.addEventListener('click',ReturnToIntroPage);
+homeWidgetBtn.addEventListener('click', ReturnToIntroPage);
+goToIntroBtn.addEventListener('click', ReturnToIntroPage);
 // setting page
 // open settings page
 gotoSettingsBtn.addEventListener('click', () => {
@@ -187,10 +128,32 @@ closeSettingsBtn.addEventListener('click', () => {
   settingsPage.firstElementChild.classList.remove('animate__bounceInLeft');
 });
 
-function ReturnToIntroPage(){
+function ReturnToIntroPage() {
   gamePage.firstElementChild.hidden = true;
   gameSetsPage.hidden = true;
   gameSetsPage.firstElementChild.classList.remove('animate__fadeInBottomRight');
   introPage.classList.remove('animate__backOutDown');
   introPage.classList.add('animate__backInUp');
 }
+// refresh the game
+refreshGame.addEventListener('click', () => {
+  gameSetsPage.hidden = false;
+  gameSetsPage.classList.remove('animate__fadeOutBottomRight');
+  gameSetsPage.classList.add('animate__fadeInBottomRight');
+  gamePage.firstElementChild.style.filter = 'blur(3px)';
+});
+// start the game
+choiceIcons.forEach((choiceIcon) => {
+  choiceIcon.addEventListener('click', () => {
+    if (gameSets === 0) {
+      userScoreValue = 0;
+      computerScoreValue = 0;
+      userScore.innerHTML = 0;
+      computerScore.innerHTML = 0;
+      alert('game is finished');
+    } else {
+      gameSets--;
+      startGame(gameSets, choiceIcon.dataset.value);
+    }
+  });
+});
