@@ -170,3 +170,18 @@
   font-size: 1.6rem!important;
   letter-spacing: 1.5px;
 }
+#help{
+  transition: .5s ease;
+  position: absolute;
+  top:-150px;
+  // top: 20px;
+}
+#help__btn{
+  font-size: 1.2rem;
+  color: #d89e32;
+  outline: 0;
+}
+.custom-tooltip{
+  --bs-tooltip-bg: #d89e32;
+  --bs-tooltip-color: #232323;
+}

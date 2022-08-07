@@ -13,8 +13,11 @@ html(lang="en").light
                             i.fa-solid.fa-gear
                 .row 
                     h1#main__heading.text-center.user-select-none.pt-5 Rock Paper Scissors
-                .row.text-center  
-                    button#play__button.btn.btn-secondary.w-25.fs-3.mt-5.mx-auto.rounded-pill  play !
+                .row.text-center 
+                    .d-flex.justify-content-center.col-12.mt-5
+                        button#play__button.btn.btn-secondary.w-25.fs-3.rounded-pill  play !
+                        button#help__btn.ms-4.bg-transparent.border-0(data-bs-toggle="tooltip" data-bs-title="how to play" data-bs-custom-class="custom-tooltip")
+                                i.fa-solid.fa-circle-info
                 include includes/components/_copyright
             .container#game_page.mt-5
                 #game_wrapper(hidden).position-absolute.w-100.h-100.top-0.start-0.animate__animated.mt-5
@@ -31,4 +34,9 @@ html(lang="en").light
             .container 
                 .row 
                     include includes/components/_gameSetsWindow
+            .container
+                .row 
+                    section#help.text-center.col-12.position-absolute.start-0.mt-3
+                        button#close__help_btn.btn-close(type='button' aria-label='Close').position-absolute.top-0.bg-white.fs-5
+                        img(src="assets/img/game-help.png", alt="rock-paper-scissors").img-fluid.rounded
     include includes/_scripts

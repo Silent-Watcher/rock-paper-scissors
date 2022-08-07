@@ -50,7 +50,10 @@
         <h1 class="text-center user-select-none pt-5" id="main__heading">Rock Paper Scissors</h1>
       </div>
       <div class="row text-center"> 
-        <button class="btn btn-secondary w-25 fs-3 mt-5 mx-auto rounded-pill" id="play__button"> play !</button>
+        <div class="d-flex justify-content-center col-12 mt-5">
+          <button class="btn btn-secondary w-25 fs-3 rounded-pill" id="play__button"> play !</button>
+          <button class="ms-4 bg-transparent border-0" id="help__btn" data-bs-toggle="tooltip" data-bs-title="how to play" data-bs-custom-class="custom-tooltip"><i class="fa-solid fa-circle-info"></i></button>
+        </div>
       </div>
       <div class="row text-center mt-5">
         <footer class="user-select-none" id="copyright">Made with <span class="text-warning">❤ </span>by <a class="text-secondary text-decoration-none" href="https://github.com/Silent-Watcher" target="_blank">silentWatcher</a>
@@ -153,7 +156,15 @@
         </div>
       </div>
     </div>
+    <div class="container">
+      <div class="row"> 
+        <section class="text-center col-12 position-absolute start-0 mt-3" id="help">
+          <button class="btn-close position-absolute top-0 bg-white fs-5" id="close__help_btn" type="button" aria-label="Close"></button><img class="img-fluid rounded" src="assets/img/game-help.png" alt="rock-paper-scissors">
+        </section>
+      </div>
+    </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="assets/js/main.js"> </script>

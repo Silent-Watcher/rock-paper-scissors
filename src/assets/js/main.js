@@ -13,6 +13,7 @@ let introPage = $.querySelector('#intro_page');
 let gamePage = $.querySelector('#game_page');
 let gameSetsPage = $.querySelector('#game_sets_page');
 let settingsPage = $.querySelector('#settings_page');
+let helpPage = $.querySelector('#help');
 // animated moving scissors
 let movingScissors = $.querySelector('#moving_scissors');
 // hands
@@ -58,7 +59,13 @@ const Toast = Swal.mixin({
     toast.addEventListener('mouseleave', Swal.resumeTimer);
   },
 });
-
+//initial tooltips
+const tooltipTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="tooltip"]'
+);
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+);
 // remove animated scissors from dom when animation ends
 movingScissors.addEventListener('animationend', (event) => {
   event.target.hidden = true;
@@ -221,8 +228,8 @@ choiceIcons.forEach((choiceIcon) => {
         icon: 'info',
         title: 'Game is finished 😆',
       });
-      userHand.className ='hand';
-      computerHand.className ='hand';
+      userHand.className = 'hand';
+      computerHand.className = 'hand';
     } else {
       gameSets--;
       startGame(gameSets, choiceIcon.dataset.value);
@@ -230,3 +237,23 @@ choiceIcons.forEach((choiceIcon) => {
   });
 });
 //
+let helpWindowIntervalId;
+// show help window
+$.querySelector('#help__btn').addEventListener('click', () => {
+  helpPage.style.top = '20px';
+  helpWindowIntervalId = setTimeout(() => {
+    helpPage.style.top = '-150px';
+  }, 6000);
+});
+helpPage.addEventListener('mouseenter', function () {
+  clearTimeout(helpWindowIntervalId);
+});
+// remove help window
+$.addEventListener('keyup', (event) => {
+  if (event.key === 'Escape') {
+    helpPage.style.top = '-150px';
+  }
+});
+$.querySelector('#close__help_btn').addEventListener('click', function () {
+  helpPage.style.top = '-150px';
+});
