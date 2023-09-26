@@ -1,0 +1,9 @@
+{
+	"*.(js|ts)": [
+		"pnpm lint",
+		"pnpm lint:fix",
+		"pnpm prettier",
+		"pnpm lint:language"
+	],
+	"*.(html|css|md)": ["pnpm prettier", "pnpm lint:language"]
+}

@@ -1,0 +1,19 @@
+@keyframes handShake {
+	0%,
+	100% {
+		transform: rotate(10deg);
+	}
+	50% {
+		transform: rotate(-10deg);
+	}
+}
+
+@keyframes handShake2 {
+	0%,
+	100% {
+		transform: rotateY(180deg) rotate(10deg);
+	}
+	50% {
+		transform: rotateY(180deg) rotate(-10deg);
+	}
+}

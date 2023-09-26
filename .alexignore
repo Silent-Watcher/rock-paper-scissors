@@ -1,0 +1,5 @@
+docs/code-of-conduct.md
+node_modules
+.git
+dist
+
