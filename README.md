@@ -1,3 +1,5 @@
+![rock-paper-scissors]()
+
 # rock-paper-scissors 🕹
 
 This GitHub project is a web-based implementation of the classic Rock-Paper-Scissors game, featuring an interactive user interface, a computer opponent with randomized moves, and score tracking for an enjoyable gaming experience.
