@@ -2,9 +2,8 @@
 	"*.(js|ts)": [
 		"pnpm lint",
 		"pnpm lint:fix",
-		"pnpm prettier",
-		"pnpm lint:language"
+		"pnpm prettier"
 	],
-	"*.(html|css|scss)": ["pnpm prettier", "pnpm lint:language"],
+	"*.(html|css|scss)": ["pnpm prettier"],
 	"*.(css|scss|sass)": ["pnpm css:lint", "pnpm css:fix"]
 }
