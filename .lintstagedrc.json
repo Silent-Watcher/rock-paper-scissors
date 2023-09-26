@@ -5,6 +5,6 @@
 		"pnpm prettier",
 		"pnpm lint:language"
 	],
-	"*.(html|css)": ["pnpm prettier", "pnpm lint:language"],
+	"*.(html|css|scss)": ["pnpm prettier", "pnpm lint:language"],
 	"*.(css|scss|sass)": ["pnpm css:lint", "pnpm css:fix"]
 }
