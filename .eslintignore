@@ -3,3 +3,5 @@ node_modules
 *.css
 .git
 dist
+docs
+.github
