@@ -27,6 +27,12 @@ This GitHub project is a web-based implementation of the classic Rock-Paper-Scis
 Experience the power of the rock-paper-scissors by visiting the demo page.
 
 You can try out the game by following this [demo link.](https://silent-watcher.github.io/rock-paper-scissors/)
+<p>
+ 
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/Silent-Watcher/rock-paper-scissors)
+
+</p>
+
 
 ## Features
 
