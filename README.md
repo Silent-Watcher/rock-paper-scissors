@@ -1,4 +1,4 @@
-![rock-paper-scissors](https://github.com/Silent-Watcher/rock-paper-scissors/blob/master/public/img/Screenshot%20(302).jpg)
+![rock-paper-scissors](https://github.com/Silent-Watcher/rock-paper-scissors/blob/master/.github/rock%20paper%20scissors%20banner.png)
 
 # rock-paper-scissors 🕹
 
